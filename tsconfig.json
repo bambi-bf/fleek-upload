@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "module": "esnext",//
+      "allowJs": true,            
+      "checkJs": true,
+      "outDir": "dist",
+      "sourceMap": true,
+      "target": "es2017", //
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "strict": true,
+      "moduleResolution":"node",
+      "esModuleInterop": true,
+
+    }
+  }
