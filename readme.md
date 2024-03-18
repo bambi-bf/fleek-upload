@@ -18,7 +18,7 @@ Follow these steps to get started with the Fleek Node.js App:
 1. Clone this repository:
 
    ```bash
-   git clone
+   git clone https://github.com/geniusyinka/fleek-ipfs.git
    ```
 
 2. Navigate to the project directory:
