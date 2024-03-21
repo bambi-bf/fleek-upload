@@ -4,19 +4,17 @@ import { FleekSdk, PersonalAccessTokenService } from '@fleekxyz/sdk';
 
 
 const patService = new PersonalAccessTokenService({
-    personalAccessToken: 'pat_eiOc1xTfAn-g3RzVkVJC', // your PAT goes here
-    // projectId: '<your-project-id>' // Optional
+    personalAccessToken: '<your-pat>', // your PAT goes here
+    projectId: '<your-project-id>'
 })
 
 const fleekSdk = new FleekSdk({ accessTokenService: patService })
-const projectId = await fleekSdk.projects().create({ name: 'First Project' });
 
 async function uploadFileToIPFS(filename: string, content: Buffer) {
     const result = await fleekSdk.ipfs().add({
       path: filename,
       content: content
     });
-  
     return result;
   }
 
@@ -27,4 +25,3 @@ async function uploadFileToIPFS(filename: string, content: Buffer) {
   }).catch(error => {
       console.error('Error uploading file to IPFS:', error);
   })
-
