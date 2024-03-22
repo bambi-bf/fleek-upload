@@ -18,22 +18,33 @@ Follow these steps to get started with the Fleek Node.js App:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/geniusyinka/fleek-ipfs.git
+   git clone https://github.com/fleekxyz/pin-files-to-ipfs-with-fleekSDK.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd fleek-ipfs
+   cd pin-files-to-ipfs-with-fleekSDK
    ```
 
-3. Install dependencies:
+3. Enviroment Variables
+    duplicate and rename ```.example.env``` to ```.env```
+
+4. Install dependencies:
 
    ```bash
    npm install
    ```
 
-4. Obtain a Personal Access Token (PAT) from Fleek. Replace `<your-pat>` in the code with your actual PAT.
+5. Duplicate ```.example.env```, and rename to ```.env```
+
+6. Obtain a Personal Access Token (PAT) from Fleek. 
+    Run ```fleek pat create``` on your terminal, copy your PAT, and insert into your ```.env``` file.
+
+7. Create and Obtain your ProjectID
+    Run ```fleek projects create``` this will create a new project for you on fleek. Then run ```fleek projects list``` this will list out all your projects and their corresponding project ID in your terminal. Copy your project ID. It should look like this: ```clrje1234567abcdedf```, and insert into your env file. 
+
+
 
 ## Usage
 
@@ -41,7 +52,7 @@ Once the application is running, follow these steps to upload a file to IPFS:
 
 1. Ensure that the file you want to upload is in the project directory.
 
-2. Update the filename in the code to match the file you want to upload:
+2. Update the ```filename``` in the code to match the file you want to upload:
 
    ```javascript
    const fileContent = fs.readFileSync('<filename>');
@@ -51,6 +62,8 @@ Once the application is running, follow these steps to upload a file to IPFS:
      })
      .catch(error => {
        console.error('Error uploading file to IPFS:', error);
+     }).finally(()=> {
+            process.exit(); 
      });
    ```
 
@@ -60,5 +73,5 @@ Once the application is running, follow these steps to upload a file to IPFS:
    npx tsx index.ts
    ```
 
-4. Upon successful execution, you will see a message indicating that the file has been uploaded to IPFS along with the resulting hash.
+4. Upon successful execution, you will see a message indicating that the file has been uploaded to IPFS along with the resulting data.
 
