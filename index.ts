@@ -26,7 +26,7 @@ async function uploadFileToIPFS(filename: string, content: Buffer) {
 
   uploadFileToIPFS('fleek.jpg', fileContent).then( result => {
       console.log('File uploaded to IPFS:', result);
-      console.log( 'IPFS URL:', `https://cf-ipfs.io/${result.cid}`)
+      console.log( 'IPFS URL:', `https://cf-ipfs.com/ipfs/${result.cid}`)
   }).catch(error => {
       console.error('Error uploading file to IPFS:', error);
   }).finally(() => {
